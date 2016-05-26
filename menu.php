@@ -10,7 +10,7 @@
 	</div><!-- end headline -->
 	<?php 
 		error_reporting(-1);
-		$mysqli = new mysqli("localhost", "root", "root", "pitsa");
+		$mysqli = new mysqli("localhost", "test", "t3st3r123", "test");
 		 
 		/* check connection */
 		if (mysqli_connect_errno()) {
@@ -19,7 +19,7 @@
 		}
 		mysqli_set_charset($mysqli,"utf8");
 		
-		$query = "SELECT * FROM `menu` ORDER BY `id`;";
+		$query = "SELECT * FROM `sirle_menu` ORDER BY `id`;";
 		
 		if ($result = $mysqli->query($query)) {
 		 

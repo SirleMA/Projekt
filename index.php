@@ -25,13 +25,13 @@
 				<select name="restaurant">
 					<?php 
 						$host = 'localhost';
-						$username = 'root';
-						$pass = 'root';
-						$db = 'pitsa';
+						$username = 'test';
+						$pass = 't3st3r123';
+						$db = 'test';
 						$mydb = mysql_connect($host,$username,$pass);
 						mysql_select_db($db);
 						mysql_set_charset('utf8');
-						$sql = mysql_query("SELECT * FROM restoran");
+						$sql = mysql_query("SELECT * FROM sirle_restoran");
 						while ($row = mysql_fetch_array($sql)){
 							unset($id, $name);
 							$id = $row['id'];
@@ -83,7 +83,7 @@
 				$comments = $_POST['comments'];
 				$restaurant = $_POST['restaurant'];
 				
-			$query = mysql_query("INSERT INTO `broneering`(`id`, `rid`, `date`, `time`, `duration`, `number`, `contact`, `kid`, `tel`, `comments`, `bdate`) VALUES ('','$restaurant','$date','$arrive','$length','$number','$name','','$phone','$comments',NOW())")or die(mysql_error());
+			$query = mysql_query("INSERT INTO `sirle_broneering`(`id`, `rid`, `date`, `time`, `duration`, `number`, `contact`, `kid`, `tel`, `comments`, `bdate`) VALUES ('','$restaurant','$date','$arrive','$length','$number','$name','','$phone','$comments',NOW())")or die(mysql_error());
 			$result = mysql_query($query);
 				echo '<script>';
 				echo 'alert("Broneering on edukalt sisestatud!");';

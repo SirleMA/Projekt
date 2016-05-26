@@ -12,13 +12,13 @@
 		Restorani nimi: <select name="bname">
 			<?php 
 				$host = 'localhost';
-				$username = 'root';
-				$pass = 'root';
-				$db = 'pitsa';
+				$username = 'test';
+				$pass = 't3st3r123';
+				$db = 'test';
 				$mydb = mysql_connect($host,$username,$pass);
 				mysql_select_db($db);
 				mysql_set_charset('utf8');
-				$sql = mysql_query("SELECT * FROM restoran");
+				$sql = mysql_query("SELECT * FROM sirle_restoran");
 				while ($row = mysql_fetch_array($sql)){
 					unset($id, $name);
 					$id = $row['id'];
@@ -34,7 +34,7 @@
 		Kontakt isik: <input pattern=".{2,50}" type="text" name="brname"/>
 		Broneering: <select name="bron">
 			<?php 
-				$sql = mysql_query("SELECT * FROM kanal");
+				$sql = mysql_query("SELECT * FROM sirle_kanal");
 				while ($row = mysql_fetch_array($sql)){
 					unset($id, $bron);
 					$id = $row['id'];
@@ -90,7 +90,7 @@
 				$tel = $_POST['btel'];
 				$comment = $_POST['bcom'];
 				
-			$query = mysql_query("INSERT INTO `broneering`(`id`, `rid`, `date`, `time`, `duration`, `number`, `contact`, `kid`, `tel`, `comments`, `bdate`) VALUES ('','$bname','$bdate','$barrive','$blength','$bnumber','$brname','$bron','$tel','$comment',NOW())")or die(mysql_error());
+			$query = mysql_query("INSERT INTO `sirle_broneering`(`id`, `rid`, `date`, `time`, `duration`, `number`, `contact`, `kid`, `tel`, `comments`, `bdate`) VALUES ('','$bname','$bdate','$barrive','$blength','$bnumber','$brname','$bron','$tel','$comment',NOW())")or die(mysql_error());
 			$result = mysql_query($query);
 				echo '<script>';
 				echo 'alert("Broneering on edukalt sisestatud!");';
@@ -106,7 +106,7 @@
 		<p><b>Siia kuvatakse kõik hetkel sisestatud broneeringud kuupäeva ja algusaja järgi sorteeritult.</b>
 		<?php 
 				error_reporting(-1);
-		$mysqli = new mysqli("localhost", "root", "root", "pitsa");
+		$mysqli = new mysqli("localhost", "test", "t3st3r123", "test");
 		 
 		/* check connection */
 		if (mysqli_connect_errno()) {
@@ -114,7 +114,7 @@
 			exit();
 		}
 		mysqli_set_charset($mysqli,"utf8");
-		$query = "SELECT * FROM `broneering` INNER JOIN `restoran` ON broneering.rid = restoran.id ORDER BY `date` DESC, `time` ASC;";
+		$query = "SELECT * FROM `sirle_broneering` INNER JOIN `sirle_restoran` ON sirle_broneering.rid = sirle_restoran.id ORDER BY `date` DESC, `time` ASC;";
 		
 		if ($result = $mysqli->query($query)) {
 		 

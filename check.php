@@ -1,9 +1,9 @@
 <?php
 $host = "localhost";
-$username = "root";
-$password = "root";
-$db_name = "pitsa";
-$tbl_name = "users";
+$username = "test";
+$password = "t3st3r123";
+$db_name = "test";
+$tbl_name = "sirle_users";
 
 // Connect to server and select databse.
 mysql_connect("$host", "$username", "$password") or die("cannot connect");

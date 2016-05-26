@@ -13,9 +13,9 @@
 		<?php
 			if (isset($_POST['rsubmit'])){
 				$host = 'localhost';
-				$username = 'root';
-				$pass = 'root';
-				$db = 'pitsa';
+				$username = 'test';
+				$pass = 't3st3r123';
+				$db = 'test';
 				$mydb = mysql_connect($host,$username,$pass);
 				mysql_select_db($db);
 				mysql_set_charset('utf8');
@@ -23,7 +23,7 @@
 				$rname = $_POST['name'];
 				$raddress = $_POST['address'];
 				
-				$query = "INSERT INTO `restoran`(`id`, `name`, `address`) VALUES ('','$rname','$raddress')";
+				$query = "INSERT INTO `sirle_restoran`(`id`, `name`, `address`) VALUES ('','$rname','$raddress')";
 				$result = mysql_query($query);
 					echo '<script>';
 					echo 'setTimeout(function() { alert("Restoran on edukalt lisatud!"); }, 0);';
@@ -40,7 +40,7 @@
 	</div>
 		<?php 
 		error_reporting(-1);
-		$mysqli = new mysqli("localhost", "root", "root", "pitsa");
+		$mysqli = new mysqli("localhost", "test", "t3st3r123", "test");
 		 
 		/* check connection */
 		if (mysqli_connect_errno()) {
@@ -49,7 +49,7 @@
 		}
 		mysqli_set_charset($mysqli,"utf8");
 
-		$query = "SELECT * FROM  `restoran` ORDER BY  `id`;";
+		$query = "SELECT * FROM  `sirle_restoran` ORDER BY  `id`;";
 		
 				if ($result = $mysqli->query($query)) {
 		 
