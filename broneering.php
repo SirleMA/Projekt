@@ -21,7 +21,7 @@
 				$sql = mysql_query("SELECT * FROM sirle_restoran");
 				while ($row = mysql_fetch_array($sql)){
 					unset($id, $name);
-					$id = $row['id'];
+					$id = $row['rid'];
 					$name = $row['name']; 
 					echo '<option value="'.$id.'">'.$name.'</option>';
 				}				
@@ -29,7 +29,7 @@
 		</select>
 		Broneeringu kuupäev: <input type="date" name="bdate"/>
 		Algusaeg: <input type="time" name="barrive"/>
-		Kestvus: <input type="number" min="0" step="0.1" name="blength"/>
+		Kestvus: <input type="number" min="0" step="0.5" name="blength"/>
 		Inimeste arv: <input type="number" min="1" max="50" step="1" name="bnumber"/>
 		Kontakt isik: <input pattern=".{2,50}" type="text" name="brname"/>
 		Broneering: <select name="bron">
@@ -51,11 +51,7 @@
 			if (!empty($_POST['rsubmit'])) {
 				error_reporting(E_ALL ^ E_STRICT);
 		
-			if(empty($_POST['bname'])){
-				echo '<script>';
-				echo 'alert("Restorani nimi on kohustuslik väli!");';
-				echo '</script>';
-			} else if(empty($_POST['bdate'])){
+			if(empty($_POST['bdate'])){
 				echo '<script>';
 				echo 'alert("Kuupäev on kohustuslik väli!");';
 				echo '</script>';

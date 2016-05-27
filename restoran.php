@@ -49,7 +49,7 @@
 		}
 		mysqli_set_charset($mysqli,"utf8");
 
-		$query = "SELECT * FROM  `sirle_restoran` ORDER BY  `id`;";
+		$query = "SELECT * FROM  `sirle_restoran` ORDER BY  `rid`;";
 		
 				if ($result = $mysqli->query($query)) {
 		 
