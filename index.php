@@ -82,7 +82,7 @@
 				$number = $_POST['number'];
 				$comments = $_POST['comments'];
 				$restaurant = $_POST['restaurant'];
-				$arrival = $_POST['arrival'];
+				$arrive = $_POST['arrive'];
 				
 			$query = mysql_query("INSERT INTO `sirle_broneering`(`id`, `rid`, `date`, `time`, `duration`, `number`, `contact`, `kid`, `tel`, `comments`, `bdate`) VALUES ('','$restaurant','$date','$arrive','$length','$number','$name','','$phone','$comments',NOW())")or die(mysql_error());
 			$result = mysql_query($query);
