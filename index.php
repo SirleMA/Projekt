@@ -1,6 +1,7 @@
 ﻿<?php
 	include ("header.php");
 ?>
+
 		<div class="banner">
 			<img src="./images/banner.png">
 		</div><!-- banner ends -->
@@ -33,7 +34,7 @@
 						$sql = mysql_query("SELECT * FROM sirle_restoran");
 						while ($row = mysql_fetch_array($sql)){
 							unset($id, $name);
-							$id = $row['id'];
+							$id = $row['rid'];
 							$name = $row['name']; 
 							echo '<option value="'.$id.'">'.$name.'</option>';
 						}				
