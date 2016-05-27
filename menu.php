@@ -1,6 +1,7 @@
 <?php 
-	include($_SERVER["DOCUMENT_ROOT"] . "/Projekt/header.php");
+	include("header.php");
 ?>
+
 	<div class="pizzad">
 		<div class="banner">
 				<img src="./images/banner.png">
@@ -40,3 +41,6 @@
 		$mysqli->close();
 	?>
 	</div>
+<?php
+	include("footer.php");
+?>

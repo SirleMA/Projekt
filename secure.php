@@ -1,5 +1,5 @@
 <?php 
-	include($_SERVER["DOCUMENT_ROOT"] . "/Projekt/header.php");
+	include("header.php");
 ?>
 <p> Tere Anu!
 <div class="intro">
@@ -12,3 +12,6 @@
 	<button type="button"><a href="./restoran.php">Sisesta restorane</a></button>
 	<button type="button"><a href="./broneering.php">Sisesta broneering</a></button>
 </div>
+<?php 
+	include("footer.php");
+?>

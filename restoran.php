@@ -1,5 +1,5 @@
 <?php 
-	include($_SERVER["DOCUMENT_ROOT"] . "/Projekt/header.php");
+	include("header.php");
 ?>
 <div class="sisesta">
 	<div class="text">
@@ -66,3 +66,6 @@
 		$mysqli->close();
 	?>
 </div>
+<?php 
+	include("footer.php");
+?>

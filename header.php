@@ -1,6 +1,5 @@
 <?php
 	session_start();
-	register_shutdown_function('shutdown');
 ?>
 <html lang="en">
 	<head>
@@ -21,13 +20,3 @@
 			</ul>
 		</div><!-- header ends -->
 		<div class="content">
-
-<?php
-function footer() {
-	exit;
-}
-
-function shutdown() {
-	include($_SERVER["DOCUMENT_ROOT"] . "/Projekt/footer.php");
-}
-?>

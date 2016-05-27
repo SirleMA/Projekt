@@ -1,6 +1,5 @@
 <?php 
-	session_start();
-	include($_SERVER["DOCUMENT_ROOT"] . "/Projekt/header.php");
+	include("header.php");
 ?>
 <div class="log-in">
 	<form name="login" method="POST" action="check.php">
@@ -9,3 +8,6 @@
 		<input type="submit" name="submit" value="Logi sisse"/>
 	</form>
 </div>
+<?php 
+	include("footer.php");
+?>

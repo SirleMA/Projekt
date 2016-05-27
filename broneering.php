@@ -1,5 +1,5 @@
-<?php 
-	include($_SERVER["DOCUMENT_ROOT"] . "/Projekt/header.php");
+﻿<?php 
+	include("header.php");
 ?>
 
 <div class="broneeringuvorm">
@@ -114,7 +114,7 @@
 			exit();
 		}
 		mysqli_set_charset($mysqli,"utf8");
-		$query = "SELECT * FROM `sirle_broneering` INNER JOIN `sirle_restoran` ON sirle_broneering.rid = sirle_restoran.id ORDER BY `date` DESC, `time` ASC;";
+		$query = "SELECT * FROM `sirle_broneering` INNER JOIN `sirle_restoran` ON sirle_broneering.rid = sirle_restoran.rid ORDER BY `date` DESC, `time` ASC;";
 		
 		if ($result = $mysqli->query($query)) {
 		 
@@ -129,7 +129,8 @@
 				echo "<td>".$row['name']."</td>";
 				echo "<td>".$row['tel']."</td>";
 				echo "<td>".$row['comments']."</td>";
-				echo "<td>".$row['bdate']."</td></tr>";
+				echo "<td>".$row['bdate']."</td>";
+				echo "<td><form action='change.php' method='POST'><input type='hidden' name='cid' value='".$row["id"]."'/><input type='submit' id='muuda' name='submit-btn' value='Muuda' /></form></td></tr>";
 			} 
 			print "</table>";
 			/* free result set */
@@ -141,3 +142,6 @@
 	?>
 	</div>
 </div>
+<?php 
+	include("footer.php");
+?>
